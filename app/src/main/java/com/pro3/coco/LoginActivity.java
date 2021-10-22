@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toolbar;
 
 public class LoginActivity extends AppCompatActivity {
+    //나는 깃에 올리려고 내용 수정 중이야~!!(*^▽^*)
+
     Toolbar main_toolbar;
 
     @Override
