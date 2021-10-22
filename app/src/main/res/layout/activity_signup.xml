@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignupActivity">
+
+    <LinearLayout
+        android:id="@+id/signupLL"
+        android:layout_width="match_parent"
+        android:layout_height="547dp"
+        android:layout_marginTop="100px"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/memtxt3"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:layout_weight="1"
+                android:text="아이디"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/signupId"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="120px"
+                android:layout_marginRight="120px"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/idCheckTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:textColor="#E91E63" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/memtxt4"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:layout_weight="1"
+                android:text="비밀번호"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/signupPw"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="120px"
+                android:layout_marginRight="120px"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/pwCheckTxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:textColor="#E91E63" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/memtxt5"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:layout_weight="1"
+                android:text="비밀번호 확인"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/signupPw2"
+                android:layout_width="157dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/pwCheckImg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10px"
+                android:layout_marginLeft="10px"
+                android:layout_marginEnd="60px"
+                android:layout_marginRight="60px"
+                android:scaleType="fitStart" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/pwCheckTxt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:textColor="#E91E63" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/memtxt6"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/signupName"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="100px"
+                android:layout_marginRight="100px"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/nameCheckTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:textColor="#E91E63" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/memtxt7"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:layout_weight="1"
+                android:text="생년월일"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/signupBirth"
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="100px"
+                android:layout_marginRight="100px"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:hint=" 예) 20211021"
+                android:inputType="textPersonName"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/birthCheckTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:textColor="#E91E63" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/memtxt8"
+                android:layout_width="162dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:layout_weight="1"
+                android:text="휴대폰번호"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/signupTel"
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="100px"
+                android:layout_marginRight="100px"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:hint=' "-"없이 숫자만 입력'
+                android:inputType="textPersonName"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/telCheckTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:textColor="#E91E63" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/memtxt9"
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:layout_weight="1"
+                android:text="이메일"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/signupEmail"
+                android:layout_width="155dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="100px"
+                android:layout_marginRight="100px"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/emailCheckTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:textColor="#E91E63" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80px"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSignUpFin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100px"
+                android:layout_marginLeft="100px"
+                android:text="회원가입"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnSignUpInit"
+                android:layout_width="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="300px"
+                android:layout_marginLeft="300px"
+                android:layout_marginEnd="100px"
+                android:layout_marginRight="100px"
+                android:layout_weight="1"
+                android:text="초기화"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

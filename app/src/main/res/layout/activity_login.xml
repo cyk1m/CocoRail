@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="525dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green_ash"></TabWidget> <!-- tabs라는 정해진 id를 꼭 넣어줘야! 항상!! -->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/numLoginTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="464dp"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/telLoginTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/snsLoginTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </FrameLayout> <!-- tabcontent라는 정해진 id를 꼭 넣어줘야! 항상!! -->
+        </LinearLayout>
+    </TabHost>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/mint"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bb1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:text="승차권예매"
+            app:icon="@drawable/train_icon"
+            app:iconGravity="top"
+            app:iconPadding="5dp"
+            app:iconSize="130px" />
+
+        <Button
+            android:id="@+id/bb2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:text="승차권확인"
+            app:icon="@drawable/ticket_icon"
+            app:iconGravity="top"
+            app:iconPadding="5dp"
+            app:iconSize="130px" />
+
+        <Button
+            android:id="@+id/bb3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:text="마이페이지"
+            app:icon="@drawable/mypage_icon"
+            app:iconGravity="top"
+            app:iconPadding="5dp"
+            app:iconSize="130px" />
+    </LinearLayout>
+
+</LinearLayout>

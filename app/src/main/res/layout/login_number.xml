@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_marginTop="100px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/memtxt1"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:layout_weight="1"
+            android:text="아이디"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/memID"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="100px"
+            android:layout_marginRight="100px"
+            android:layout_weight="1"
+            android:background="@color/light_gray"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/memtxt2"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:layout_weight="1"
+            android:text="비밀번호"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/memPW"
+            android:layout_width="208dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="100px"
+            android:layout_marginRight="100px"
+            android:layout_weight="1"
+            android:background="@color/light_gray"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:layout_marginTop="50px"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:layout_marginTop="80px"
+            android:layout_marginEnd="40px"
+            android:layout_marginRight="40px"
+            android:layout_weight="1"
+            android:text="로그인"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40px"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="80px"
+            android:layout_marginEnd="100px"
+            android:layout_marginRight="100px"
+            android:layout_weight="1"
+            android:text="회원가입"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="100px"
+            android:layout_marginLeft="100px"
+            android:layout_weight="1"
+            android:text="회원번호 저장"
+            android:textSize="18dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="40px"
+            android:layout_marginLeft="40px"
+            android:layout_marginEnd="40px"
+            android:layout_marginRight="40px"
+            android:layout_weight="1"
+            android:text="자동로그인"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+
+        >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="80px"
+            android:layout_marginLeft="100px"
+            android:layout_marginEnd="100px"
+            android:layout_marginRight="100px"
+            android:layout_weight="1"
+            android:text="비밀번호 찾기"
+            android:textColor="#007BB3"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</LinearLayout>
