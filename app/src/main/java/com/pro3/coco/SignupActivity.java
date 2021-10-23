@@ -231,11 +231,11 @@ public class SignupActivity extends AppCompatActivity {
 //                    "^(?=.*\d)(?=.*[a-z]).{5,20}$"
 //                    "^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-/+=])(?=.*[a-zA-Z]).{8,16}$"
 //                    "^[a-zA-X0-9]@[a-zA-Z0-9].[a-zA-Z0-9]$"
-//                    if (!Pattern.matches("^[a-zA-Z0-9].{5,20}@[a-zA-Z0-9].{5,10}.[a-z].{3}$", signupEmail.getText().toString())){
-//                        emailCheckTxt.setText("이메일 형식을 바르게 입력해주세요.");
-//                    }else{
-//                        emailCheckTxt.setText("");
-//                    }
+                    if (!Pattern.matches("^[a-zA-Z0-9.-_]{5,20}+@[a-zA-Z0-9.-]{2,8}+\\.[a-zA-Z]{2,6}$", signupEmail.getText().toString())){
+                        emailCheckTxt.setText("이메일 형식을 바르게 입력해주세요.");
+                    }else{
+                        emailCheckTxt.setText("");
+                    }
                 }
             }
         });
@@ -267,12 +267,13 @@ public class SignupActivity extends AppCompatActivity {
                 String mTel = signupTel.getText().toString();
                 if ((mId.equals("") || mId == null) || (mPw.equals("") || mPw == null) || (mName.equals("") || mName == null)
                         || (mBirth.equals("") || mBirth == null) || (mEmail.equals("") || mEmail == null) || (mTel.equals("") || mTel == null)
-                        || (!idCheckTxt.equals("") || !pwCheckTxt1.equals("") || !pwCheckTxt2.equals("") || !telCheckTxt.equals("") || !nameCheckTxt.equals("")
+                        && (!idCheckTxt.equals("") || !pwCheckTxt1.equals("") || !pwCheckTxt2.equals("") || !telCheckTxt.equals("") || !nameCheckTxt.equals("")
                         || !birthCheckTxt.equals("") || !emailCheckTxt.equals(""))){
                     signupAlert("필수 항목을 바르게 입력했는지 확인해주세요."); //유효성 검사
                 }else {
                     SQLiteDatabase sqlDB = memTBL_dbHelper.getWritableDatabase(); //stream을 얻어옴
-                    String sql = "insert into memTBL values ('" + mId + "', '" + mPw + "', '" + mName + "', '" + mBirth + "', '" + mEmail + "', '" + mTel + "');";
+                    String sql = "insert into memTBL2 values (" + null + ", '" + mId + "', '" + mPw + "', '" + mName + "', '" + mBirth + "', '" + mEmail + "', '" + mTel + "');";
+//                    String sql = "insert into memTBL2 values ('" + mId + "', '" + mPw + "', '" + mName + "', '" + mBirth + "', '" + mEmail + "', '" + mTel + "');";
                     sqlDB.execSQL(sql);
                     Log.d("member_sqlite3DML", "데이터 삽입 성공...!!!");
                     sqlDB.close();
@@ -293,10 +294,11 @@ public class SignupActivity extends AppCompatActivity {
                     emailCheckTxt.setText("");
                     pwCheckImg.setImageResource(R.drawable.pw_check_clear);
                     String text = "회원가입이 완료되었습니다.";
-                    signupAlert(text);
+                    signupAlert(text); //alert에서 확인을 누르면 intent를 하게 바꾸기!!!!
 //                    Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), MaintestActivity.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(getApplicationContext(), MaintestActivity.class);
+//                    startActivity(intent);
+
                 }
             }
         });
