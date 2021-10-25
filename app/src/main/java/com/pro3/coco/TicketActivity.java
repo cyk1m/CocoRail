@@ -48,7 +48,7 @@ public class TicketActivity extends AppCompatActivity {
 
         btnReserv2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { //MaintestActivity 대신 정훈씨 파트
+            public void onClick(View view) { //MaintestActivity 대신 팀원 예매 파트
                 if (loginCheck){
                     Intent intent = new Intent(getApplicationContext(), MaintestActivity.class);
                     intent.putExtra("loginOk", loginCheck);
