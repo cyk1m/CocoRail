@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/mem_travel3"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:layout_marginTop="100px"
+        android:layout_marginTop="60px"
         android:orientation="horizontal">
-
 
 
         <TextView
@@ -97,7 +106,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="94dp"
-        android:layout_marginTop="50px"
         android:orientation="horizontal">
 
         <Button
@@ -114,7 +122,7 @@
             android:textSize="18dp" />
 
         <Button
-            android:id="@+id/btnSnsSignUp"
+            android:id="@+id/btnNumSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40px"
@@ -129,37 +137,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="100px"
-            android:layout_marginLeft="100px"
-            android:layout_weight="1"
-            android:text="회원번호 저장"
-            android:textSize="18dp" />
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="176dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="40px"
-            android:layout_marginLeft="40px"
-            android:layout_marginEnd="40px"
-            android:layout_marginRight="40px"
-            android:layout_weight="1"
-            android:text="자동로그인"
-            android:textSize="18dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="55dp"
 
         >
@@ -169,8 +146,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="80px"
-            android:layout_marginLeft="100px"
+            android:layout_marginStart="120px"
+            android:layout_marginLeft="120px"
             android:layout_marginEnd="100px"
             android:layout_marginRight="100px"
             android:layout_weight="1"
@@ -178,4 +155,5 @@
             android:textColor="#007BB3"
             android:textSize="18dp" />
     </LinearLayout>
+
 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MaintestActivity">
+    tools:context=".TicketActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,14 +13,18 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="410dp"
-            android:gravity="center"
-            android:text="메인 테스트~~"
-            android:textSize="40dp" />
+            android:id="@+id/textView2"
+            android:layout_width="236dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginLeft="142dp"
+            android:layout_marginTop="302dp"
+            android:layout_marginEnd="211dp"
+            android:layout_marginRight="211dp"
+            android:layout_marginBottom="410dp"
+            android:text="!~!~!~!~!티켓확인 페이지!~!~!~!~!"
+            android:textSize="36sp" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -28,7 +32,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/bb1"
+            android:id="@+id/btnReserv2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -40,7 +44,7 @@
             app:iconSize="130px" />
 
         <Button
-            android:id="@+id/bb2"
+            android:id="@+id/btnTicket2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -52,7 +56,7 @@
             app:iconSize="130px" />
 
         <Button
-            android:id="@+id/bb3"
+            android:id="@+id/btnMypage2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -63,4 +67,5 @@
             app:iconPadding="5dp"
             app:iconSize="130px" />
     </LinearLayout>
+
 </LinearLayout>

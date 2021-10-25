@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MaintestActivity">
+
+<!--이게 BookMain.java의 layout파일-->
+
+    <TextView
+        android:id="@+id/textBook1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="승차권예매"
+        android:textSize="34sp" />
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="488dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="477dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="33dp">
+
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/tabLine1"
+                    android:layout_width="match_parent"
+                    android:layout_height="469dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:text="편도">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="출발" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="1dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/two_way_arrows" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="도착" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/stRegion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="출발역"
+                            android:textSize="24sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="1dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/greenarrow" />
+
+                        <TextView
+                            android:id="@+id/dpRegion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="도착역"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/searchLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/searchStation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="역명을 입력하세요"
+                            android:textSize="12sp" />
+
+                        <Button
+                            android:id="@+id/searchStationbtn"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/green_ash"
+                            android:text="검색" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/changeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="258dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ListView
+                            android:id="@+id/stationList"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:visibility="gone" />
+
+                        <CalendarView
+                            android:id="@+id/calendarView2"
+                            android:layout_width="214dp"
+                            android:layout_height="300dp" />
+
+                        <LinearLayout
+                            android:id="@+id/personLayout"
+                            android:layout_width="196dp"
+                            android:layout_height="300dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="승객 연령 및 좌석수" />
+
+                            <TextView
+                                android:id="@+id/sumPerson"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="총 0명"
+                                android:textSize="34sp" />
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="3dp"
+                                android:paddingBottom="3dp"
+                                android:text="최소 1명 - 최대 9명"
+                                android:textSize="10sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="155dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:text="어른(만 13세 이상)"
+                                    android:textSize="8sp" />
+
+                                <ImageView
+                                    android:id="@+id/minus1"
+                                    android:layout_width="55dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/minusgray" />
+
+                                <TextView
+                                    android:id="@+id/result1"
+                                    android:layout_width="66dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="0" />
+
+                                <ImageView
+                                    android:id="@+id/plus1"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/plusgray" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="155dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:text="어린이(6-12세)"
+                                    android:textSize="8sp" />
+
+                                <ImageView
+                                    android:id="@+id/minus2"
+                                    android:layout_width="55dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/minusgray" />
+
+                                <TextView
+                                    android:id="@+id/result2"
+                                    android:layout_width="66dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="0" />
+
+                                <ImageView
+                                    android:id="@+id/plus2"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/plusgray" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="155dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:text="경로(만 65세 이상)"
+                                    android:textSize="8sp" />
+
+                                <ImageView
+                                    android:id="@+id/minus3"
+                                    android:layout_width="55dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/minusgray" />
+
+                                <TextView
+                                    android:id="@+id/result3"
+                                    android:layout_width="66dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="0" />
+
+                                <ImageView
+                                    android:id="@+id/plus3"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/plusgray" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="155dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:text="복지할인(장애)"
+                                    android:textSize="8sp" />
+
+                                <ImageView
+                                    android:id="@+id/minus4"
+                                    android:layout_width="55dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/minusgray" />
+
+                                <TextView
+                                    android:id="@+id/result4"
+                                    android:layout_width="66dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="0" />
+
+                                <ImageView
+                                    android:id="@+id/plus4"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    app:srcCompat="@drawable/plusgray" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:text="왕복">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="출발" />
+
+                        <ImageView
+                            android:layout_width="59dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/two_way_arrows" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="도착" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <Button
+        android:id="@+id/trainSearchbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_ash"
+        android:text="열차 조회하기" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/mint"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnReserv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:text="승차권예매"
+            app:icon="@drawable/train_icon"
+            app:iconGravity="top"
+            app:iconPadding="5dp"
+            app:iconSize="130px" />
+
+        <Button
+            android:id="@+id/btnTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:text="승차권확인"
+            app:icon="@drawable/ticket_icon"
+            app:iconGravity="top"
+            app:iconPadding="5dp"
+            app:iconSize="130px" />
+
+        <Button
+            android:id="@+id/btnMypage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00ff0000"
+            android:text="마이페이지"
+            app:icon="@drawable/mypage_icon"
+            app:iconGravity="top"
+            app:iconPadding="5dp"
+            app:iconSize="130px" />
+    </LinearLayout>
+</LinearLayout>

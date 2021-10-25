@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="사용 중인 ID를 입력하세요."
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/yourId"
+            android:layout_width="188dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="150px"
+            android:layout_marginLeft="150px"
+            android:background="@color/light_gray"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btnIdCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="150px"
+            android:layout_marginRight="150px"
+            android:layout_weight="1"
+            android:text="확인"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialog_idcheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150px"
+        android:layout_marginLeft="150px"
+        android:textColor="#E91E63"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/pwChgLL"
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="변경할 PW를 입력하세요."
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/yourPw"
+                android:layout_width="194dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="150px"
+                android:layout_marginLeft="150px"
+                android:background="@color/light_gray"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/btnPwChange"
+                android:layout_width="188dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="150px"
+                android:layout_marginRight="150px"
+                android:layout_weight="1"
+                android:text="변경"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dialog_pwcheck"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="150px"
+            android:layout_marginLeft="150px"
+            android:textColor="#E91E63"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

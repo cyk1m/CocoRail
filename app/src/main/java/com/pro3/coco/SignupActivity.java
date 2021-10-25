@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Rect;
 import android.os.Build;
@@ -29,12 +30,15 @@ import android.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
     Toolbar main_toolbar;
     MemTBL_DBHelper memTBL_dbHelper;
+    DatabaseReference database;
     LinearLayout signupLL;
     Button btnSignUpFin, btnSignUpInit;
     ImageView pwCheckImg;
@@ -69,6 +73,7 @@ public class SignupActivity extends AppCompatActivity {
         signupEmail = findViewById(R.id.signupEmail);
 
         memTBL_dbHelper = new MemTBL_DBHelper(this); //액티비티를 넘겨주겠다.
+        database = FirebaseDatabase.getInstance().getReference("users");
 
         // 아이디 중복 체크
         signupId.addTextChangedListener(new TextWatcher() {
@@ -89,6 +94,16 @@ public class SignupActivity extends AppCompatActivity {
                         idCheckTxt.setText("5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.");
                     }else{
                         idCheckTxt.setText("");
+                        //존재하는 id인지 확인 (id 중복체크)
+                        SQLiteDatabase sqlDB = memTBL_dbHelper.getWritableDatabase();
+                        String id = signupId.getText().toString();
+                        String sql2 = "select * from memTBL2 where mId ='" + id + "'"; //하나 검색
+                        Cursor cursor = sqlDB.rawQuery(sql2, null); //이동하며 검색결과를 꺼내줌
+                        if (cursor.moveToNext()){
+                            idCheckTxt.setText("이미 가입 된 아이디입니다.");
+                        }else{
+                            idCheckTxt.setText("");
+                        }
                     }
                 }
             }
@@ -228,10 +243,7 @@ public class SignupActivity extends AppCompatActivity {
                 } else {
                     emailCheckTxt.setText("");
                     //5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능
-//                    "^(?=.*\d)(?=.*[a-z]).{5,20}$"
-//                    "^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-/+=])(?=.*[a-zA-Z]).{8,16}$"
-//                    "^[a-zA-X0-9]@[a-zA-Z0-9].[a-zA-Z0-9]$"
-                    if (!Pattern.matches("^[a-zA-Z0-9.-_]{5,20}+@[a-zA-Z0-9.-]{2,8}+\\.[a-zA-Z]{2,6}$", signupEmail.getText().toString())){
+                    if (!Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", signupEmail.getText().toString())){
                         emailCheckTxt.setText("이메일 형식을 바르게 입력해주세요.");
                     }else{
                         emailCheckTxt.setText("");
@@ -241,8 +253,7 @@ public class SignupActivity extends AppCompatActivity {
         });
 
 
-        //====================================================버튼 영역===============================================================
-
+//====================================================버튼 영역===============================================================
 
         btnSignUpInit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -276,6 +287,34 @@ public class SignupActivity extends AppCompatActivity {
 //                    String sql = "insert into memTBL2 values ('" + mId + "', '" + mPw + "', '" + mName + "', '" + mBirth + "', '" + mEmail + "', '" + mTel + "');";
                     sqlDB.execSQL(sql);
                     Log.d("member_sqlite3DML", "데이터 삽입 성공...!!!");
+
+                    //auto increment인 mNum을 mId로 조회해서 그걸 키값으로 Firebase에 넣어주기.
+                    //가입할 때 sqlite db에도 넣고, f.b에 auto increment(회원번호), 이메일, pw도 넣게 했다.
+                    String i = "";
+                    String sql2 = "select * from memTBL2 where mId ='" + mId + "'"; //하나 검색
+                    Cursor cursor = sqlDB.rawQuery(sql2, null); //이동하며 검색결과를 꺼내줌
+                    if (cursor.moveToNext()) {
+                        Log.d("member_sqlite3DML", cursor.getString(0));
+                        i = cursor.getString(0);
+                    }
+                    //EditText의 값들을 DTO 생성자에 set
+                    mUser user = new mUser(mEmail, mPw);
+                    //데이터 넣기 -> String.valueOf는 key값, setValue(user)는 위에서 넣어둔 value값
+                    database.child(String.valueOf(i)).setValue(user)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(SignupActivity.this, "저장을 완료했습니다.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            })//성공 시
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(SignupActivity.this, "저장을 실패했습니다.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            });//실패 시
                     sqlDB.close();
                     Log.d("member_sqlite3DML", "데이터 closed...!!!");
                     signupId.setText("");
@@ -294,15 +333,10 @@ public class SignupActivity extends AppCompatActivity {
                     emailCheckTxt.setText("");
                     pwCheckImg.setImageResource(R.drawable.pw_check_clear);
                     String text = "회원가입이 완료되었습니다.";
-                    signupAlert(text); //alert에서 확인을 누르면 intent를 하게 바꾸기!!!!
-//                    Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(getApplicationContext(), MaintestActivity.class);
-//                    startActivity(intent);
-
+                    signupAlert(text);
                 }
             }
         });
-
 
         // EditText 밖을 클릭하면 키보드 내리기
         // 부모 레이아웃에 id를 주고, onCreate()에서 호출
@@ -338,5 +372,16 @@ public class SignupActivity extends AppCompatActivity {
         a.setPositiveButton("확인", null);
         a.show();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }//toolbar
 
 }//class
